@@ -7,7 +7,7 @@ Files added:
 - execution-environment.yml : EE build definition
 - requirements.yml : Ansible Galaxy collections to install (cisco.fmc)
 - requirements.txt : Python packages to install into the EE (optional)
-- bindep.txt : System packages to install during build (optional)
+- bindep.txt : System packages to install during build (optional) 
 - .github/workflows/build-and-push.yml : GitHub Actions workflow to build and push to Docker Hub
 
 Build locally
