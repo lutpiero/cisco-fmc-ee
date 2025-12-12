@@ -121,11 +121,18 @@ Here's a simple example of using the Cisco FMC collection:
   connection: local
   collections:
     - cisco.fmcansible
+  vars:
+    fmc_host: "192.168.1.100"
+    fmc_username: "admin"
+    fmc_password: "{{ lookup('env', 'FMC_PASSWORD') }}"
   
   tasks:
     - name: Get network objects
       cisco.fmcansible.fmc_configuration:
         operation: getAllNetworkObject
+        fmc_host: "{{ fmc_host }}"
+        fmc_username: "{{ fmc_username }}"
+        fmc_password: "{{ fmc_password }}"
         register_as: network_objects
 ```
 
