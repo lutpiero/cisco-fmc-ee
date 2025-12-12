@@ -8,7 +8,7 @@ dependencies:
   python: requirements.txt
 
   # Optional: system packages required by the collection (e.g., libxml2-dev)
-  bindep: bindep.txt
+  #bindep: bindep.txt
 
 # Optional additional build steps (left empty here)
 additional_build_steps: []
