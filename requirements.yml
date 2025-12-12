@@ -1,6 +1,7 @@
 ---
 collections:
   # Cisco FMC collection from Ansible Galaxy
-  - name: cisco.fmc
-    # Optionally pin a version, e.g.:
-    # version: "1.0.0"
+  - ansible.utils
+  - ansible.netcommon
+  - cisco.fmcansible
+  - community.general
