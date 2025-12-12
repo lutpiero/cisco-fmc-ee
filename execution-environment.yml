@@ -1,0 +1,19 @@
+---
+version: 3
+
+images:
+  base_image:
+    name: quay.io/ansible/creator-base:v0.1.0
+
+dependencies:
+  galaxy: requirements.yml
+  python: requirements.txt
+  system: bindep.txt
+
+additional_build_steps:
+  append_final:
+    - RUN mkdir -p /runner/env
+    - RUN chmod -R g+w /runner
+
+options:
+  package_manager_path: /usr/bin/microdnf
