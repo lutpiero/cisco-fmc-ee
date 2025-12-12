@@ -1,8 +1,6 @@
 ---
 collections:
-  - name: cisco.fmcansible
-    version: ">=0.2.2"
-  - name: ansible.netcommon
-    version: ">=5.0.0"
-  - name: ansible.utils
-    version: ">=2.0.0"
+  # Cisco FMC collection from Ansible Galaxy
+  - name: cisco.fmc
+    # Optionally pin a version, e.g.:
+    # version: "1.0.0"

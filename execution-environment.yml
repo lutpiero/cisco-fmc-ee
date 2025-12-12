@@ -1,19 +1,14 @@
 ---
-version: 3
-
-images:
-  base_image:
-    name: quay.io/ansible/creator-base:v0.1.0
-
+version: 1
 dependencies:
+  # Ansible Galaxy collections to install into the EE
   galaxy: requirements.yml
+
+  # Optional: Python packages required by the collection or your playbooks
   python: requirements.txt
-  system: bindep.txt
 
-additional_build_steps:
-  append_final:
-    - RUN mkdir -p /runner/env
-    - RUN chmod -R g+w /runner
+  # Optional: system packages required by the collection (e.g., libxml2-dev)
+  bindep: bindep.txt
 
-options:
-  package_manager_path: /usr/bin/microdnf
+# Optional additional build steps (left empty here)
+additional_build_steps: []
