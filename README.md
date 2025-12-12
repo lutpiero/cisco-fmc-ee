@@ -133,7 +133,7 @@ Here's a simple example of using the Cisco FMC collection:
         fmc_host: "{{ fmc_host }}"
         fmc_username: "{{ fmc_username }}"
         fmc_password: "{{ fmc_password }}"
-        register_as: network_objects
+      register: network_objects
 ```
 
 ## Contributing
