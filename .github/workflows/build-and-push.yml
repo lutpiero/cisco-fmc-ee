@@ -34,11 +34,12 @@ jobs:
 
       - name: Build execution environment (ansible-builder)
         run: |
-          ansible-builder build -t docker.io/lutpiero/cisco-fmc-ee:latest --container-engine docker
+          # Let ansible-builder autodetect the container engine (docker or podman)
+          ansible-builder build -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/cisco-fmc-ee:latest
 
-      - name: Push image: latest and SHA tag
+      - name: Push image latest and SHA tag
         env:
-          IMAGE: docker.io/lutpiero/cisco-fmc-ee
+          IMAGE: docker.io/${{ secrets.DOCKERHUB_USERNAME }}/cisco-fmc-ee
         run: |
           docker push $IMAGE:latest
           docker tag $IMAGE:latest $IMAGE:${{ github.sha }}
