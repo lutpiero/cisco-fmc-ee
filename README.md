@@ -27,7 +27,7 @@ docker push docker.io/lutpiero/cisco-fmc-ee:latest
 GitHub Actions CI
 -----------------
 The included workflow builds the EE and pushes it to Docker Hub. It expects the following repository secrets to exist:
-- DOCKERHUB_USERNAME: Docker Hub username (should be 'lutpiero')
+- DOCKERHUB_USERNAME: Docker Hub username (should be 'lutpiero' or other username)
 - DOCKERHUB_TOKEN: Docker Hub access token or password
 
 The workflow is triggered on pushes to main and on manual dispatch.
