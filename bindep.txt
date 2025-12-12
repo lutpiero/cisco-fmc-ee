@@ -1,4 +1,5 @@
-python38-devel [platform:centos-8 platform:rhel-8]
-python39-devel [platform:centos-9 platform:rhel-9]
-gcc [platform:centos platform:rhel]
-git-core [platform:centos platform:rhel]
+# System packages needed during build (OS package names like apt/yum)
+# Add packages only if required by the collection (native libs, dev headers).
+# Example:
+# libssl-dev
+# libxml2-dev
