@@ -1,4 +1,3 @@
----
 name: Build and push EE to Docker Hub
 
 on:
@@ -36,7 +35,7 @@ jobs:
         run: |
           ansible-builder build -t docker.io/lutpiero/cisco-fmc-ee:latest --container-engine docker
 
-      - name: Push image: latest and SHA tag
+      - name: Push image latest and SHA tag
         env:
           IMAGE: docker.io/lutpiero/cisco-fmc-ee
         run: |
