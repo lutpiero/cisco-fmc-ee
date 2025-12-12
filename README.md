@@ -95,7 +95,7 @@ ansible-runner run /path/to/project \
 
 ## Included Python Packages
 
-- ansible-core (>=2.14)
+- ansible-core (>=2.16.13)
 - requests (>=2.28.0)
 - jinja2 (>=3.1.0)
 
