@@ -14,7 +14,7 @@ dependencies:
   galaxy: |
     ---
     collections:
-      - name: ansible.windows
+      - name: cisco.fmcansible
   system: |
     git-core    
   python: |    
