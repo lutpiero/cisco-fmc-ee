@@ -1,5 +1,5 @@
 ---
-version: 1
+version: 3
 dependencies:
   # Ansible Galaxy collections to install into the EE
   galaxy: requirements.yml
