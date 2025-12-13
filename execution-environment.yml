@@ -12,6 +12,6 @@ dependencies:
 
 # Optional additional build steps (left empty here)
 additional_build_steps:
-  prepend_base:
+  prepend_galaxy:
     - python -m pip install --upgrade pip
     - python -m pip install --upgrade ansible-core
