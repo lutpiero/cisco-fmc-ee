@@ -6,4 +6,8 @@ images:
     name: docker.io/redhat/ubi9:latest
     
 dependencies:
+  ansible_core:
+    package_pip: ansible-core==2.19.2
+  ansible_runner:
+    package_pip: ansible-runner
   galaxy: requirements.yml
