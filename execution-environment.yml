@@ -12,5 +12,4 @@ dependencies:
     package_pip: ansible-runner
   galaxy: requirements.yml
   python: requirements.txt
-options:
-  skip_ansible_check: true
+  
