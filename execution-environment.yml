@@ -11,4 +11,7 @@ dependencies:
   #bindep: bindep.txt
 
 # Optional additional build steps (left empty here)
-# additional_build_steps: []
+additional_build_steps:
+  prepend:
+    - python -m pip install --upgrade pip
+    - python -m pip install --upgrade ansible-core
