@@ -1,4 +1,3 @@
 # Python packages required by the cisco.fmc collection or your playbooks.
 # Inspect the collection documentation on Ansible Galaxy and add exact pins as needed.
 # Example packages (uncomment and pin versions if required):
-requests>=2.28
