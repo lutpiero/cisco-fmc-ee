@@ -1,16 +1,10 @@
 ---
 version: 3
+
+images:
+  base_image: 
+    name: quay.io/ansible/creator-ee:latest
+
 dependencies:
-  # Ansible Galaxy collections to install into the EE
   galaxy: requirements.yml
-
-  # Optional: Python packages required by the collection or your playbooks
   python: requirements.txt
-
-  # Optional: system packages required by the collection (e.g., libxml2-dev)
-  #bindep: bindep.txt
-
-# Optional additional build steps (left empty here)
-additional_build_steps:
-  prepend_galaxy:
-    - RUN /usr/bin/python3 -m pip install --upgrade pip ansible-core
