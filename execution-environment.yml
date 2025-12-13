@@ -14,11 +14,7 @@ dependencies:
   galaxy: |
     ---
     collections:
-      - name: awx.awx
-      - name: ansible.utils
-      - name: ansible.netcommon
       - name: cisco.fmcansible
-      - name: community.general
   system: |
     git-core    
   python: |
