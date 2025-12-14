@@ -21,6 +21,7 @@ dependencies:
 
   system: |
     git-core    
+    git
   python: |    
     paramiko
     jmespath
