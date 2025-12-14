@@ -17,7 +17,8 @@ dependencies:
   galaxy: |
     ---
     collections:
-      - name: github.com/lutpiero/FMCAnsible.git
+      - name: cisco.fmcansible
+        source: https://github.com/lutpiero/FMCAnsible.git
       
   python: |    
     paramiko
