@@ -43,5 +43,5 @@ jobs:
           push: true
           platforms: linux/amd64
           tags: |
-            docker.io/***/cisco-fmc-ee:latest
-            docker.io/***/cisco-fmc-ee:${{ github.sha }}
+            docker.io/${{ secrets.DOCKERHUB_USERNAME }}/cisco-fmc-ee:latest
+            docker.io/${{ secrets.DOCKERHUB_USERNAME }}/cisco-fmc-ee:${{ github.sha }}
