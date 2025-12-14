@@ -40,5 +40,5 @@ jobs:
           set -eux          
           IMAGE="docker.io/${{ secrets.DOCKERHUB_USERNAME }}/cisco-fmc-ee"          
           podman tag "${IMAGE}:latest" "${IMAGE}:${GITHUB_REF_NAME}"          
-          podman push "${IMAGE}:${ GITHUB_REF_NAME }"
+          podman push "${IMAGE}":"${GITHUB_REF_NAME}"
   
