@@ -1,10 +1,12 @@
-name: Build and push EE to Docker Hub
+name: Build and push EE to Docker Hub "${GITHUB_SHA}"
 
 on:
   push:
     branches:
       - main
       - 'ee/*'
+    tags:
+      - "v*.*.*" # build only when pushing semantic version tags
   workflow_dispatch: 
 
 jobs:
@@ -36,8 +38,10 @@ jobs:
           set -eux          
           # Build without cache to avoid conflict marker issues
           ansible-builder build -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/cisco-fmc-ee:latest
-          podman images          
-          IMAGE="docker.io/${{ secrets.DOCKERHUB_USERNAME }}/cisco-fmc-ee"
-          podman tag "${IMAGE}:latest" "${IMAGE}:${GITHUB_SHA}"
-          podman push "${IMAGE}:${GITHUB_SHA}"
-      
+      - name: Tag and push images        
+        run: |          
+          set -eux          
+          IMAGE="docker.io/${{ secrets.DOCKERHUB_USERNAME }}/cisco-fmc-ee"          
+          podman tag "${IMAGE}:latest" "${IMAGE}:${GITHUB_SHA}"          
+          podman push "${IMAGE}:${ github.ref_name }"
+  
