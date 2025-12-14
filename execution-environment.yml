@@ -5,8 +5,8 @@ images:
     name: docker.io/redhat/ubi9:latest
 dependencies:
   system: |
-    git-core    
-    git
+    git [platform:rpm]
+    git [platform:dpkg]
   python_interpreter:
     package_system: python
   ansible_core:
