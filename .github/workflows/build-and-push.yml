@@ -36,12 +36,9 @@ jobs:
           set -eux
           # Build without cache to avoid conflict marker issues
           ansible-builder build --no-cache -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/cisco-fmc-ee:latest
-
-      - name: Tag and push images
-        run: |
-          set -eux
           docker images
           IMAGE="docker.io/${{ secrets.DOCKERHUB_USERNAME }}/cisco-fmc-ee"
           docker push "${IMAGE}:latest"
-          # docker tag "${IMAGE}:latest" "${IMAGE}:${GITHUB_SHA}"
-          # docker push "${IMAGE}:${GITHUB_SHA}"
+          docker tag "${IMAGE}:latest" "${IMAGE}:${GITHUB_SHA}"
+          docker push "${IMAGE}:${GITHUB_SHA}"
+      
