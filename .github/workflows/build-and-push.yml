@@ -36,10 +36,8 @@ jobs:
           set -eux          
           # Build without cache to avoid conflict marker issues
           ansible-builder build -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/cisco-fmc-ee:latest
-          podman images
-          docker images
+          podman images          
           IMAGE="docker.io/${{ secrets.DOCKERHUB_USERNAME }}/cisco-fmc-ee"
-          docker push "${IMAGE}:latest"
-          docker tag "${IMAGE}:latest" "${IMAGE}:${GITHUB_SHA}"
-          docker push "${IMAGE}:${GITHUB_SHA}"
+          podman tag "${IMAGE}:latest" "${IMAGE}:${GITHUB_SHA}"
+          podman push "${IMAGE}:${GITHUB_SHA}"
       
