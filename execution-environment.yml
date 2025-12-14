@@ -4,6 +4,9 @@ images:
   base_image:
     name: docker.io/redhat/ubi9:latest
 dependencies:
+  system: |
+    git-core    
+    git
   python_interpreter:
     package_system: python
   ansible_core:
@@ -18,10 +21,6 @@ dependencies:
         src: https://github.com/lutpiero/FMCAnsible.git
         type: git
         version: v1.0.0
-
-  system: |
-    git-core    
-    git
   python: |    
     paramiko
     jmespath
