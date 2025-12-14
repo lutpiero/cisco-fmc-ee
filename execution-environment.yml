@@ -15,6 +15,10 @@ dependencies:
     ---
     collections:
       - name: cisco.fmcansible
+        src: https://github.com/lutpiero/FMCAnsible.git
+        type: git
+        version: v1.0.0
+
   system: |
     git-core    
   python: |    
