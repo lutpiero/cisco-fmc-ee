@@ -3,7 +3,7 @@ name: Build and push EE to Docker Hub "${GITHUB_SHA}"
 on:
   push:    
     tags:
-      - "v*.*.*" # build only when pushing semantic version tags
+      - "*.*.*" # build only when pushing semantic version tags
   workflow_dispatch: 
 
 jobs:
