@@ -34,6 +34,7 @@ jobs:
       - name: Build execution environment (ansible-builder)
         run: |
           set -eux
+          podman images
           # Build without cache to avoid conflict marker issues
           ansible-builder build -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/cisco-fmc-ee:latest
           docker images
