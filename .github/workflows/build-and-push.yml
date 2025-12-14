@@ -35,7 +35,7 @@ jobs:
         run: |
           set -eux
           # Build without cache to avoid conflict marker issues
-          ansible-builder build --no-cache -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/cisco-fmc-ee:latest
+          ansible-builder build -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/cisco-fmc-ee:latest
           docker images
           IMAGE="docker.io/${{ secrets.DOCKERHUB_USERNAME }}/cisco-fmc-ee"
           docker push "${IMAGE}:latest"
