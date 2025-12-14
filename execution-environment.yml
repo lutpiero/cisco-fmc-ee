@@ -17,11 +17,8 @@ dependencies:
   galaxy: |
     ---
     collections:
-      - name: git+
-      - name: cisco.fmcansible
-        source: git@github.com/lutpiero/FMCAnsible.git
-        type: git
-        version: v1.0.0
+      - name: git+github.com/lutpiero/FMCAnsible.git
+      
   python: |    
     paramiko
     jmespath
