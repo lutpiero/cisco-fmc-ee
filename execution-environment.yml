@@ -17,7 +17,7 @@ dependencies:
   galaxy: |
     ---
     collections:
-      - name: git+github.com/lutpiero/FMCAnsible.git
+      - name: git@github.com/lutpiero/FMCAnsible.git
       
   python: |    
     paramiko
