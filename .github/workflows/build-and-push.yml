@@ -33,10 +33,10 @@ jobs:
 
       - name: Build execution environment (ansible-builder)
         run: |
-          set -eux
-          podman images
+          set -eux          
           # Build without cache to avoid conflict marker issues
           ansible-builder build -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/cisco-fmc-ee:latest
+          podman images
           docker images
           IMAGE="docker.io/${{ secrets.DOCKERHUB_USERNAME }}/cisco-fmc-ee"
           docker push "${IMAGE}:latest"
