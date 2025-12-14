@@ -17,6 +17,7 @@ dependencies:
   galaxy: |
     ---
     collections:
+      - name: git+
       - name: cisco.fmcansible
         src: https://github.com/lutpiero/FMCAnsible.git
         type: git
