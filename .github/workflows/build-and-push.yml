@@ -36,10 +36,12 @@ jobs:
           # Build without cache to avoid conflict marker issues
           ansible-builder build --no-cache -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/cisco-fmc-ee:latest
 
-      - name: Push image latest and SHA tag
-        env:
-          IMAGE: docker.io/${{ secrets.DOCKERHUB_USERNAME }}/cisco-fmc-ee
-        run:  |
-          docker push $IMAGE:latest
-          docker tag $IMAGE:latest $IMAGE:${{ github. sha }}
-          docker push $IMAGE:${{ github.sha }}
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          platforms: linux/amd64
+          tags: |
+            docker.io/***/cisco-fmc-ee:latest
+            docker.io/***/cisco-fmc-ee:${{ github.sha }}
